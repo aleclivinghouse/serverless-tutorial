@@ -16,6 +16,7 @@ exports.handler = async event => {
         return null;
     })
 
+    
     if(!newData){
         return Responses._400({message: 'Failed to write data by file name'})
     }
