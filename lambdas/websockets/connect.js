@@ -8,6 +8,7 @@ exports.handler = async event => {
 
     const {connectionId: connectionID, domainName, stage} = event.requestContext;
 
+    
     const data = {
         ID: connectionID,
         date: Date.now(),

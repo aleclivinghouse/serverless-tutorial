@@ -4,20 +4,21 @@ const create = (domainName, stage) => {
     const endpoint = `${domainName}/${stage}`;
     return new AWS.ApiGatewayManagementApi({
         apiVersion: '2018-11-29',
-        endpoint
+        endpoint,
     });
-}
+};
 
-const send = (domainName, stage, connectionID, message) => {
+const send = ({ domainName, stage, connectionID, message }) => {
     const ws = create(domainName, stage);
 
     const postParams = {
         Data: message,
-        connectionId:connectionID
-    }
-    return ws.postToConnection(postParams).promise();
-}
+        ConnectionId: connectionID,
+    };
 
-module.exports - {
-    send
-}
+    return ws.postToConnection(postParams).promise();
+};
+
+module.exports = {
+    send,
+};
