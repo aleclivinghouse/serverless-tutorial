@@ -24,7 +24,7 @@ const handler = async event => {
     if (!newUser) {
         return Responses._400({ message: 'Failed to write user by ID' });
     }
-
+    
     return Responses._200({ newUser });
 };
 
