@@ -61,6 +61,7 @@ const Dynamo = {
                 ':hkey': queryValue,
             },
         }
+        
         const res = await documentClient.query(params).promise();
         return res.Items || [];
     }
